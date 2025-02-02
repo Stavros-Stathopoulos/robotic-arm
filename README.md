@@ -1,0 +1,1 @@
+This repository contains the creation of a robotic arm using arduino uno and it is based on this robotic arm from How To Megatronics: https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/
