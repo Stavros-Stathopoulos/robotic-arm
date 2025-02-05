@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Created by="Your Name" on="02/05/2025" using="Simscape Multibody Link Version X.X" from="SolidWorks X.X.X"/>
+  <ModelUnits mass="kilogram" length="meter"/>
+  <DataUnits mass="kilogram" length="meter"/>
+  
+  <RootAssembly name="5DOF_Robotic_Arm" uid="5DOF_Robotic_Arm" version="1">
+    <AssemblyFile name="5DOF_Robotic_Arm.sldasm" type="SolidWorks Assembly"/>
+    
+    <!-- Base -->
+    <Instance name="Base" uid="Base" entityUid="Base" rigid="true">
+      <Transform>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+        <Translation>0 0 0</Translation>
+      </Transform>
+      <VisualProperties>
+        <Ambient r="0.8" g="0.8" b="0.8" a="1"/>
+        <Diffuse r="0.8" g="0.8" b="0.8" a="1"/>
+        <Specular r="0.4" g="0.4" b="0.4" a="1"/>
+        <Shininess>0.3</Shininess>
+      </VisualProperties>
+    </Instance>
+    
+    <!-- Shoulder -->
+    <Instance name="Shoulder" uid="Shoulder" entityUid="Shoulder" rigid="true">
+      <Transform>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+        <Translation>0 0.5 0</Translation> <!-- Adjust this as needed -->
+      </Transform>
+      <VisualProperties>
+        <Ambient r="0.6" g="0.6" b="0.6" a="1"/>
+        <Diffuse r="0.6" g="0.6" b="0.6" a="1"/>
+        <Specular r="0.3" g="0.3" b="0.3" a="1"/>
+        <Shininess>0.5</Shininess>
+      </VisualProperties>
+    </Instance>
+    
+    <!-- Elbow -->
+    <Instance name="Elbow" uid="Elbow" entityUid="Elbow" rigid="true">
+      <Transform>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+        <Translation>0 1.0 0</Translation> <!-- Adjust this as needed -->
+      </Transform>
+      <VisualProperties>
+        <Ambient r="0.7" g="0.7" b="0.7" a="1"/>
+        <Diffuse r="0.7" g="0.7" b="0.7" a="1"/>
+        <Specular r="0.35" g="0.35" b="0.35" a="1"/>
+        <Shininess>0.5</Shininess>
+      </VisualProperties>
+    </Instance>
+    
+    <!-- Wrist -->
+    <Instance name="Wrist" uid="Wrist" entityUid="Wrist" rigid="true">
+      <Transform>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+        <Translation>0 1.5 0</Translation> <!-- Adjust this as needed -->
+      </Transform>
+      <VisualProperties>
+        <Ambient r="0.8" g="0.8" b="0.8" a="1"/>
+        <Diffuse r="0.8" g="0.8" b="0.8" a="1"/>
+        <Specular r="0.4" g="0.4" b="0.4" a="1"/>
+        <Shininess>0.6</Shininess>
+      </VisualProperties>
+    </Instance>
+    
+    <!-- End Effector -->
+    <Instance name="EndEffector" uid="EndEffector" entityUid="EndEffector" rigid="true">
+      <Transform>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+        <Translation>0 2.0 0</Translation> <!-- Adjust this as needed -->
+      </Transform>
+      <VisualProperties>
+        <Ambient r="0.9" g="0.9" b="0.9" a="1"/>
+        <Diffuse r="0.9" g="0.9" b="0.9" a="1"/>
+        <Specular r="0.45" g="0.45" b="0.45" a="1"/>
+        <Shininess>0.7</Shininess>
+      </VisualProperties>
+    </Instance>
+    
+  </RootAssembly>
+
+  <!-- Joints between links (revolute joints for simplicity) -->
+  <Constraints>
+    <!-- Shoulder Joint -->
+    <RevoluteJoint name="ShoulderJoint" uid="ShoulderJoint">
+      <Frame1>
+        <Translation>0 0.5 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame1>
+      <Frame2>
+        <Translation>0 0.5 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame2>
+    </RevoluteJoint>
+    
+    <!-- Elbow Joint -->
+    <RevoluteJoint name="ElbowJoint" uid="ElbowJoint">
+      <Frame1>
+        <Translation>0 1.0 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame1>
+      <Frame2>
+        <Translation>0 1.0 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame2>
+    </RevoluteJoint>
+    
+    <!-- Wrist Joint -->
+    <RevoluteJoint name="WristJoint" uid="WristJoint">
+      <Frame1>
+        <Translation>0 1.5 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame1>
+      <Frame2>
+        <Translation>0 1.5 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame2>
+    </RevoluteJoint>
+
+    <!-- End Effector Joint -->
+    <RevoluteJoint name="EndEffectorJoint" uid="EndEffectorJoint">
+      <Frame1>
+        <Translation>0 2.0 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame1>
+      <Frame2>
+        <Translation>0 2.0 0</Translation>
+        <Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+      </Frame2>
+    </RevoluteJoint>
+  </Constraints>
+
+</SimscapeMultibodyImportXML>
